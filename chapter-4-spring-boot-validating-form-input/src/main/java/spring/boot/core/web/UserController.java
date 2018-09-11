@@ -14,21 +14,19 @@ import spring.boot.core.service.UserService;
 import javax.validation.Valid;
 
 /**
- * 用户控制层
+ * User Controller
  *
  * Created by bysocket on 24/07/2017.
  */
 @Controller
-@RequestMapping(value = "/users")     // 通过这里配置使下面的映射都在 /users
+@RequestMapping(value = "/users")     
 public class UserController {
 
     @Autowired
-    UserService userService;          // 用户服务层
+    UserService userService;
 
     /**
-     *  获取用户列表
-     *    处理 "/users" 的 GET 请求，用来获取用户列表
-     *    通过 @RequestParam 传递参数，进一步实现条件查询或者分页查询
+     *  Get User List
      */
     @RequestMapping(method = RequestMethod.GET)
     public String getUserList(ModelMap map) {
@@ -37,7 +35,7 @@ public class UserController {
     }
 
     /**
-     * 显示创建用户表单
+     * Show User Form
      *
      * @param map
      * @return
@@ -50,9 +48,7 @@ public class UserController {
     }
 
     /**
-     *  创建用户
-     *    处理 "/users" 的 POST 请求，用来获取用户列表
-     *    通过 @ModelAttribute 绑定参数，也通过 @RequestParam 从页面中传递参数
+     * Create New User
      */
     @RequestMapping(value = "/create", method = RequestMethod.POST)
     public String postUser(ModelMap map,
@@ -71,9 +67,7 @@ public class UserController {
 
 
     /**
-     * 显示需要更新用户表单
-     *    处理 "/users/{id}" 的 GET 请求，通过 URL 中的 id 值获取 User 信息
-     *    URL 中的 id ，通过 @PathVariable 绑定参数
+     * Show user form that need update
      */
     @RequestMapping(value = "/update/{id}", method = RequestMethod.GET)
     public String getUser(@PathVariable Long id, ModelMap map) {
@@ -83,7 +77,7 @@ public class UserController {
     }
 
     /**
-     * 处理 "/users/{id}" 的 PUT 请求，用来更新 User 信息
+     * Update user
      *
      */
     @RequestMapping(value = "/update", method = RequestMethod.POST)
@@ -101,7 +95,7 @@ public class UserController {
     }
 
     /**
-     * 处理 "/users/{id}" 的 GET 请求，用来删除 User 信息
+     * Delete user
      */
     @RequestMapping(value = "/delete/{id}", method = RequestMethod.GET)
     public String deleteUser(@PathVariable Long id) {

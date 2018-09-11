@@ -9,7 +9,7 @@
     <packaging>jar</packaging>
 
     <name>chapter-4-spring-boot-validating-form-input</name>
-    <description>第四章表单校验案例</description>
+    <description>spring-boot-validating-form-input</description>
 
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -31,33 +31,33 @@
             <artifactId>spring-boot-starter-validation</artifactId>
         </dependency>
 
-        <!-- Web 依赖 - 包含了 hibernate-validator 依赖-->
+        <!-- Web dependency - include hibernate-validator dependency -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
 
-        <!-- 单元测试依赖 -->
+        <!-- UT dependency -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
 
-        <!-- Spring Data JPA 依赖 :: 数据持久层框架 -->
+        <!-- Spring Data JPA dependency :: data persistent framework-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-jpa</artifactId>
         </dependency>
 
-        <!-- h2 数据源连接驱动 -->
+        <!-- h2 database -->
         <dependency>
             <groupId>com.h2database</groupId>
             <artifactId>h2</artifactId>
             <scope>runtime</scope>
         </dependency>
 
-        <!-- 模板引擎 Thymeleaf 依赖 -->
+        <!-- Thymeleaf -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-thymeleaf</artifactId>
@@ -67,7 +67,7 @@
 
     <build>
         <plugins>
-            <!-- Spring Boot Maven 插件 -->
+            <!-- Spring Boot Maven -->
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>

@@ -12,7 +12,7 @@ import javax.validation.constraints.Size;
 import java.io.Serializable;
 
 /**
- * 用户实体类
+ * User Entity 
  * <p>
  * Created by bysocket on 21/07/2017.
  */
@@ -20,31 +20,31 @@ import java.io.Serializable;
 public class User implements Serializable {
 
     /**
-     * 编号
+     * ID
      */
     @Id
     @GeneratedValue
     private Long id;
 
     /**
-     * 名称
+     * Name
      */
-    @NotEmpty(message = "姓名不能为空")
-    @Size(min = 2, max = 8, message = "姓名长度必须大于 2 且小于 20 字")
+    @NotEmpty(message = "Name can't be empty")
+    @Size(min = 2, max = 8, message = "Name length should between 2 to 20")
     private String name;
 
     /**
-     * 年龄
+     * Age
      */
-    @NotNull(message = "年龄不能为空")
-    @Min(value = 0, message = "年龄大于 0")
-    @Max(value = 300, message = "年龄不大于 300")
+    @NotNull(message = "Age can't be empty")
+    @Min(value = 0, message = "age should  > 0")
+    @Max(value = 300, message = "age should < 300")
     private Integer age;
 
     /**
-     * 出生时间
+     * Birthday
      */
-    @NotEmpty(message = "出生时间不能为空")
+    @NotEmpty(message = "Birthday can't be empty")
     private String birthday;
 
     public Long getId() {

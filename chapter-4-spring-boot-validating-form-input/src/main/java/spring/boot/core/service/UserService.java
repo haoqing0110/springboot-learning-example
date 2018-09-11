@@ -6,7 +6,7 @@ import spring.boot.core.domain.User;
 import java.util.List;
 
 /**
- * User 业务层接口
+ * User Service API
  *
  * Created by bysocket on 24/07/2017.
  */

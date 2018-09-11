@@ -6,16 +6,16 @@
         <link th:href="@{/css/default.css}" rel="stylesheet"/>
         <link rel="icon" th:href="@{/images/favicon.ico}" type="image/x-icon"/>
         <meta charset="UTF-8"/>
-        <title>用户管理</title>
+        <title>User Management</title>
     </head>
 
     <body>
         <div class="contentDiv">
 
-            <h5> 《 Spring Boot 2.x 核心技术实战》第二章快速入门案例</h5>
+            <h5>Spring Boot Demo - User Management</h5>
 
             <legend>
-                <strong>用户管理</strong>
+                <strong>User Management</strong>
             </legend>
 
             <form th:action="@{/users/{action}(action=${action})}" method="post" class="form-horizontal">
@@ -23,33 +23,33 @@
                 <input type="hidden" name="id" th:value="${user.id}"/>
 
                 <div class="form-group">
-                    <label for="user_name" class="col-sm-2 control-label">名称:</label>
+                    <label for="user_name" class="col-sm-2 control-label">User Name:</label>
                     <div class="col-xs-4">
                         <input type="text" class="form-control" id="user_name" name="name" th:value="${user.name}" th:field="*{user.name}" />
                     </div>
-                    <label class="col-sm-2 control-label text-danger" th:if="${#fields.hasErrors('user.name')}" th:errors="*{user.name}">姓名有误!</label>
+                    <label class="col-sm-2 control-label text-danger" th:if="${#fields.hasErrors('user.name')}" th:errors="*{user.name}">Name is wrong!</label>
                 </div>
 
                 <div class="form-group">
-                    <label for="user_age" class="col-sm-2 control-label">年龄:</label>
+                    <label for="user_age" class="col-sm-2 control-label">Age :</label>
                     <div class="col-xs-4">
                         <input type="text" class="form-control" id="user_age" name="age" th:value="${user.age}" th:field="*{user.age}" />
                     </div>
-                    <label class="col-sm-2 control-label text-danger" th:if="${#fields.hasErrors('user.age')}" th:errors="*{user.age}">年龄有误!</label>
+                    <label class="col-sm-2 control-label text-danger" th:if="${#fields.hasErrors('user.age')}" th:errors="*{user.age}">Age is wrong!</label>
                 </div>
 
                 <div class="form-group">
-                    <label for="user_birthday" class="col-sm-2 control-label">出生日期:</label>
+                    <label for="user_birthday" class="col-sm-2 control-label">Birthday :</label>
                     <div class="col-xs-4">
                         <input type="date" class="form-control" id="user_birthday" name="birthday" th:value="${user.birthday}" th:field="*{user.birthday}"/>
                     </div>
-                    <label class="col-sm-2 control-label text-danger" th:if="${#fields.hasErrors('user.birthday')}" th:errors="*{user.birthday}">生日有误!</label>
+                    <label class="col-sm-2 control-label text-danger" th:if="${#fields.hasErrors('user.birthday')}" th:errors="*{user.birthday}">Birthday is wrong!</label>
                 </div>
 
                 <div class="form-group">
                     <div class="col-sm-offset-2 col-sm-10">
-                        <input class="btn btn-primary" type="submit" value="提交"/>&nbsp;&nbsp;
-                        <input class="btn" type="button" value="返回" onclick="history.back()"/>
+                        <input class="btn btn-primary" type="submit" value="submit"/>&nbsp;&nbsp;
+                        <input class="btn" type="button" value="return" onclick="history.back()"/>
                     </div>
                 </div>
             </form>

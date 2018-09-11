@@ -11,7 +11,7 @@ import spring.boot.core.service.UserService;
 import java.util.List;
 
 /**
- * User 业务层实现
+ * User Service
  *
  * Created by bysocket on 24/07/2017.
  */
@@ -30,13 +30,13 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public User insertByUser(User user) {
-        LOGGER.info("新增用户：" + user.toString());
+        LOGGER.info("New added user: " + user.toString());
         return userRepository.save(user);
     }
 
     @Override
     public User update(User user) {
-        LOGGER.info("更新用户：" + user.toString());
+        LOGGER.info("Update user: " + user.toString());
         return userRepository.save(user);
     }
 
@@ -45,13 +45,13 @@ public class UserServiceImpl implements UserService {
         User user = userRepository.findById(id).get();
         userRepository.delete(user);
 
-        LOGGER.info("删除用户：" + user.toString());
+        LOGGER.info("Delete user: " + user.toString());
         return user;
     }
 
     @Override
     public User findById(Long id) {
-        LOGGER.info("获取用户 ID ：" + id);
+        LOGGER.info("Get User ID: " + id);
         return userRepository.findById(id).get();
     }
 }

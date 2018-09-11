@@ -6,26 +6,26 @@
         <link th:href="@{/css/default.css}" rel="stylesheet"/>
         <link rel="icon" th:href="@{/images/favicon.ico}" type="image/x-icon"/>
         <meta charset="UTF-8"/>
-        <title>用户列表</title>
+        <title>User List</title>
     </head>
 
     <body>
 
         <div class="contentDiv">
 
-            <h5> 《 Spring Boot 2.x 核心技术实战》第二章快速入门案例</h5>
+            <h5>Spring Boot Demo - User List</h5>
 
             <table class="table table-hover table-condensed">
                 <legend>
-                    <strong>用户列表</strong>
+                    <strong>User List</strong>
                 </legend>
                 <thead>
                     <tr>
-                        <th>用户编号</th>
-                        <th>名称</th>
-                        <th>年龄</th>
-                        <th>出生时间</th>
-                        <th>管理</th>
+                        <th>User ID</th>
+                        <th>User Name</th>
+                        <th>Age</th>
+                        <th>Birthday</th>
+                        <th>Manage</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -34,12 +34,12 @@
                         <td><a th:href="@{/users/update/{userId}(userId=${user.id})}" th:text="${user.name}"></a></td>
                         <td th:text="${user.age}"></td>
                         <td th:text="${user.birthday}"></td>
-                        <td><a class="btn btn-danger" th:href="@{/users/delete/{userId}(userId=${user.id})}">删除</a></td>
+                        <td><a class="btn btn-danger" th:href="@{/users/delete/{userId}(userId=${user.id})}">Delete</a></td>
                     </tr>
                 </tbody>
             </table>
 
-            <div><a class="btn btn-primary" href="/users/create" role="button">创建用户</a></div>
+            <div><a class="btn btn-primary" href="/users/create" role="button">Add User</a></div>
         </div>
 
     </body>
