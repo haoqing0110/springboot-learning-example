@@ -56,6 +56,18 @@ spec:
 service "spring-demo" created
 deployment "spring-demo" created
 ```
+### Create tls secret
+```
+# cat create-secret.sh
+#!/bin/bash
+openssl genrsa -out ing-tls.key 4096
+openssl req -new -key ing-tls.key -out ing-tls.csr -subj "/CN=haoqing-ubu-1.eng.platformlab.ibm.com"
+openssl x509 -req -days 36500 -in ing-tls.csr -signkey ing-tls.key -out ing-tls.crt
+kubectl create secret tls ing-tls-secret --cert=ing-tls.crt --key=ing-tls.key
+```
+```
+./create-secret.sh
+```
 ### Create an ingress
 ```
 # cat spring-demo-ing-tls.yaml
@@ -84,8 +96,7 @@ spec:
 # kubectl create -f spring-demo-ing-tls.yaml
 ingress "spring-demo" created
 ```
-
-## Access app from browser
+### Access app from browser
 Check User List
 ```
 https://haoqing-ubu-1.eng.platformlab.ibm.com/users/
